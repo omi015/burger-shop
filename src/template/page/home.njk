@@ -1,0 +1,96 @@
+{% extends "index.njk" %}
+
+{% block body %}
+ <!-- banner -->
+      <section class="bg-black text-white py-10 flex flex-col items-center">
+        <div class="bannerPrincipal flex items-center justify-center text-6xl">
+          <h2 class="font-bold w-[8em] text-right">Hambur</h2>
+          <figure>
+            <img src="/static/img/delicious-burger-studio1.jpg" alt="" />
+          </figure>
+          <h2 class="font-bold w-[8em]">guesas</h2>
+        </div>
+        <button
+          class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full"
+        >
+          Comer ahora!
+        </button>
+      </section>
+      <!-- cards -->
+      <section id="menu" >
+        <div class="bodyCardsList">
+          <div
+            class="cardsList flex justify-center items-center py-11 gap-5 text-2xl font-bold text-center"
+          >
+            <div class="cards">
+              <figure>
+                <img src="/static/img/hamburguesa(1).png" alt="" />
+              </figure>
+              <h4>Cowboy Burger</h4>
+            </div>
+            <div class="cards">
+              <a href="producto/llanera">
+                <figure>
+                  <img src="/static/img/hamburguesa(3).png" alt="" />
+                </figure>
+
+              </a>
+              <h4>Llanera</h4>
+            </div>
+            <div class="cards">
+              <figure>
+                <img src="static/img/hamburguesa(4).png" alt="" />
+              </figure>
+              <h4>Cheeseburger</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+        <section>
+        <div
+          class="bannerSectionSecond bg-black py-10 flex flex-col items-center"
+        >
+          <figure>
+            <img src="static/img/burgerandfriespotato.png" alt="" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="register">
+        <div class="bannerLogin flex flex-row">
+          <div class="bannerLeft w-[60%]">
+            <figure>
+              <img
+                class="w-full"
+                src="static/img/banner-food-tree.jpg"
+                alt=""
+              />
+            </figure>
+          </div>
+          <div class="loginRight w-[40%] flex items-center justify-center">
+            <form action="" class="flex flex-col w-[300px] text-center gap-5">
+              <h3 class="text-[#E7B91B] text-4xl font-bold">Login</h3>
+              <input
+                type="text"
+                class="bg-[#F1F1F1] py-2 px-6 rounded-full"
+                placeholder="Usuario"
+              />
+              <input
+                type="text"
+                class="bg-[#F1F1F1] py-2 px-6 rounded-full"
+                placeholder="Contraseña"
+              />
+
+              <button
+                type="submit"
+                class="bg-[#E7B91B] rounded-full py-1 font-bold"
+              >
+                Inicio
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+{% endblock %}

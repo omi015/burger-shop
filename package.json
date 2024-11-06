@@ -1,0 +1,21 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "browser:sync": "browser-sync start --proxy \"http://localhost:3030\" --files \"src/**/*.njk\"",
+    "nodemon": "nodemon ./src/index.mjs",
+    "dev": "concurrently \"npm run nodemon\" \"npm run browser:sync\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^3.0.3",
+    "concurrently": "^9.1.0",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "nunjucks": "^3.2.4"
+  }
+}
