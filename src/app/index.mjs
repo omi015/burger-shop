@@ -1,5 +1,7 @@
 import express from "express"
 import nunjucks from "nunjucks"
+import { RouterProducts } from "./controllers/Products.mjs";
+import * as ProductsService from "./services/Products.mjs";
 
 
 
@@ -15,9 +17,8 @@ app.set('view engine', 'njk');
 // 
 app.use('/static', express.static('src/assets'));
 
-app.get("/", (req, res)=>{
-    res.render("page/home");
+app.get("/", async(req, res)=>{
+    const products = await ProductsService.getProducts();
+    res.render("page/home", {products});
 });
-app.get("/producto/:slug", (req, res)=>{
-    res.render("page/llanera");
-});
+app.use(RouterProducts);

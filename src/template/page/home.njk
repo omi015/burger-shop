@@ -22,29 +22,15 @@
           <div
             class="cardsList flex justify-center items-center py-11 gap-5 text-2xl font-bold text-center"
           >
-            <div class="cards">
+          {% for item in products %}
+            <div class="cards {{ '-order-1' if item.id == 2}}">
               <figure>
-                <img src="/static/img/hamburguesa(1).png" alt="" />
+                <a href="/product/{{item.slug}}"><img src="/static/img/{{item.slug}}.png" alt="" /></a>
               </figure>
-              <h4>Cowboy Burger</h4>
+              <h4>{{item.name}}</h4>
             </div>
-            <div class="cards">
-              <a href="producto/llanera">
-                <figure>
-                  <img src="/static/img/hamburguesa(3).png" alt="" />
-                </figure>
-
-              </a>
-              <h4>Llanera</h4>
-            </div>
-            <div class="cards">
-              <figure>
-                <img src="static/img/hamburguesa(4).png" alt="" />
-              </figure>
-              <h4>Cheeseburger</h4>
-            </div>
-          </div>
-        </div>
+            
+          {% endfor %}
       </section>
 
 

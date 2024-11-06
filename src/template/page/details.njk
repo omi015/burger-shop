@@ -6,22 +6,22 @@
   >
     <div class="imageProduct">
       <figure>
-        <img src="/static/img/llanera-burguer.jpg" alt="" />
+        <img src="/static/img/{{slug}}.jpg" alt="" />
       </figure>
     </div>
     <div class="detailProduct">
-      <h3 class="text-3xl font-bold">Llanera</h3>
+      <h3 class="text-3xl font-bold">{{name}}</h3>
       <span>
+        <h3><b>{{price}}</b></h3>
         <h4>Descripcion</h4>
 
+
         <ul class="list-disc mt-4">
-          <li>Carne molida (res)</li>
-          <li>Pan de hamburguesa</li>
-          <li>Lechuga</li>
-          <li>Tomate en rodajas</li>
-          <li>Cebolla</li>
-          <li>Salsas (mayonesa, ketchup, o mostaza)</li>
-          <li>Sal y pimienta al gusto</li>
+          {% for item in description %}
+          <li>{{item}}</li>
+            
+          {% endfor %}
+          
         </ul>
       </span>
       <button
@@ -36,21 +36,18 @@
 <section class="bg-[#F8F8F8]">
   <div class="containerBurguer">
     <div class="wrapperburger flex flex-col py-12 px-12">
-      <h2 class="text-2xl font-bold">Antojate de otra</h2>
+      <h2 class="text-2xl font-bold mb-3">Antojate de otra</h2>
       <div class="bodyCardsList">
         <div class="cardsList flex gap-5 text-2xl font-bold text-center">
-          <div class="cards">
-            <figure>
-              <img src="/static/img/hamburguesa(1).png" alt="" />
-            </figure>
-            <h4>Cowboy Burger</h4>
-          </div>
-          <div class="cards">
-            <figure>
-              <img src="/static/img/hamburguesa(4).png" alt="" />
-            </figure>
-            <h4>Cheeseburger</h4>
-          </div>
+          {% for item in products %}
+            <div class="cards {{ '-order-1' if item.id == 2}}">
+              <figure>
+                <a href="/product/{{item.slug}}"><img class="w-[300px]" src="/static/img/{{item.slug}}.png" alt="" /></a>
+              </figure>
+              <h4>{{item.name}}</h4>
+            </div>
+            
+          {% endfor %}
         </div>
       </div>
     </div>
