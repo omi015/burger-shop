@@ -1,45 +1,44 @@
 {% extends "index.njk" %}
 
 {% block body %}
- <!-- banner -->
-      <section class="bg-black text-white py-10 flex flex-col items-center">
-        <div class="bannerPrincipal flex items-center justify-center text-6xl">
-          <h2 class="font-bold w-[8em] text-right">Hambur</h2>
-          <figure>
-            <img src="/static/img/delicious-burger-studio1.jpg" alt="" />
-          </figure>
-          <h2 class="font-bold w-[8em]">guesas</h2>
-        </div>
-        <button
+  <!-- banner -->
+  <section class="bg-black text-white py-10 flex flex-col items-center">
+    <div class="bannerPrincipal flex items-center justify-center text-6xl">
+      <h2 class="font-bold w-[8em] text-right">Hambur</h2>
+      <figure>
+        <img src="/static/img/delicious-burger-studio1.jpg" alt=""/>
+      </figure>
+      <h2 class="font-bold w-[8em]">guesas</h2>
+    </div>
+    <button
           class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full"
         >
           Comer ahora!
         </button>
-      </section>
-      <!-- cards -->
-      <section id="menu" >
-        <div class="bodyCardsList">
-          <div
+  </section>
+  <!-- cards -->
+  <section id="menu" >
+    <div class="bodyCardsList">
+      <div
             class="cardsList flex justify-center items-center py-11 gap-5 text-2xl font-bold text-center"
           >
-          {% for item in products %}
-            <div class="cards {{ '-order-1' if item.id == 2}}">
-              <figure>
-                <a href="/product/{{item.slug}}"><img src="/static/img/{{item.slug}}.png" alt="" /></a>
-              </figure>
-              <h4>{{item.name}}</h4>
-            </div>
-            
-          {% endfor %}
+        {% for item in products %}
+          <div class="cards {{ '-order-1' if item.id == 2}}">
+            <figure>
+              <a href="/product/{{item.slug}}"><img src="/static/img/{{item.slug}}.png" alt=""/></a>
+            </figure>
+            <h4>{{item.name}}</h4>
+          </div>
+
+        {% endfor %}
       </section>
 
-
-        <section>
+      <section>
         <div
           class="bannerSectionSecond bg-black py-10 flex flex-col items-center"
         >
           <figure>
-            <img src="static/img/burgerandfriespotato.png" alt="" />
+            <img src="static/img/burgerandfriespotato.png" alt=""/>
           </figure>
         </div>
       </section>
@@ -52,22 +51,24 @@
                 class="w-full"
                 src="static/img/banner-food-tree.jpg"
                 alt=""
-              />
+/>
             </figure>
           </div>
           <div class="loginRight w-[40%] flex items-center justify-center">
-            <form action="" class="flex flex-col w-[300px] text-center gap-5">
+            <form action="/" class="flex flex-col w-[300px] text-center gap-5" method="post">
               <h3 class="text-[#E7B91B] text-4xl font-bold">Login</h3>
               <input
                 type="text"
                 class="bg-[#F1F1F1] py-2 px-6 rounded-full"
                 placeholder="Usuario"
-              />
+                name="name"
+/>
               <input
                 type="text"
                 class="bg-[#F1F1F1] py-2 px-6 rounded-full"
                 placeholder="Contraseña"
-              />
+                name="password"
+/>
 
               <button
                 type="submit"
@@ -79,4 +80,4 @@
           </div>
         </div>
       </section>
-{% endblock %}
+    {% endblock %}
