@@ -1,8 +1,6 @@
 import express from "express";
 import nunjucks from "nunjucks";
 import { RouterProducts } from "./controllers/Products.mjs";
-import * as ProductsService from "./services/Products.mjs";
-import { Users } from "./modules/Users.mjs";
 import session from "express-session";
 import SQLiteStore from "connect-sqlite3";
 import { RouterPage } from "./controllers/Admin.mjs";

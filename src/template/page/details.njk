@@ -1,56 +1,60 @@
-{% extends "index.njk" %} {% block body %}
+{% extends "index.njk" %}
+{% block body %}
 
-<section>
-  <div
+  <section>
+    <div
     class="containerWrapperProduct flex flex-row items-center justify-center p-11 gap-10"
   >
-    <div class="imageProduct">
-      <figure>
-        <img src="/static/img/{{slug}}.jpg" alt="" />
-      </figure>
-    </div>
-    <div class="detailProduct">
-      <h3 class="text-3xl font-bold">{{name}}</h3>
-      <span>
-        <h3><b>{{price}}</b></h3>
-        <h4>Descripcion</h4>
+      <div class="imageProduct">
+        <figure>
+          <img src="/static/img/{{slug}}.jpg" alt=""/>
+        </figure>
+      </div>
+      <div class="detailProduct">
+        <h3 class="text-3xl font-bold">{{name}}</h3>
+        <span>
+          <h3>
+            <b>{{price}}</b>
+          </h3>
+          <h4>Descripcion</h4>
 
+          <ul class="list-disc mt-4">
+            {% for item in description %}
+              <li>{{item}}</li>
 
-        <ul class="list-disc mt-4">
-          {% for item in description %}
-          <li>{{item}}</li>
-            
-          {% endfor %}
-          
-        </ul>
-      </span>
-      <button
+            {% endfor %}
+
+          </ul>
+        </span>
+        <a href="/checkout/">
+          <button
         class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full mt-4"
       >
         Comer ahora!
       </button>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bg-[#F8F8F8]">
-  <div class="containerBurguer">
-    <div class="wrapperburger flex flex-col py-12 px-12">
-      <h2 class="text-2xl font-bold mb-3">Antojate de otra</h2>
-      <div class="bodyCardsList">
-        <div class="cardsList flex gap-5 text-2xl font-bold text-center">
-          {% for item in products %}
-            <div class="cards {{ '-order-1' if item.id == 2}}">
-              <figure>
-                <a href="/product/{{item.slug}}"><img class="w-[300px]" src="/static/img/{{item.slug}}.png" alt="" /></a>
-              </figure>
-              <h4>{{item.name}}</h4>
-            </div>
-            
-          {% endfor %}
+  <section class="bg-[#F8F8F8]">
+    <div class="containerBurguer">
+      <div class="wrapperburger flex flex-col py-12 px-12">
+        <h2 class="text-2xl font-bold mb-3">Antojate de otra</h2>
+        <div class="bodyCardsList">
+          <div class="cardsList flex gap-5 text-2xl font-bold text-center">
+            {% for item in products %}
+              <div class="cards {{ '-order-1' if item.id == 2}}">
+                <figure>
+                  <a href="/product/{{item.slug}}"><img class="w-[300px]" src="/static/img/{{item.slug}}.png" alt=""/></a>
+                </figure>
+                <h4>{{item.name}}</h4>
+              </div>
+
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 {% endblock %}

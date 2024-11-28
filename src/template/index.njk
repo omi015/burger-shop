@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <title>Burger</title>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
     {% include "components/header.njk" %}
+    <div class="flex-grow ">
     {% block body %}
         
     {% endblock %}
+
+    </div>
     
     {% include "components/footer.njk" %}
 </body>
