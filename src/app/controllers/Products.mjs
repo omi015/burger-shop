@@ -4,7 +4,9 @@ import { Users } from "../modules/Users.mjs";
 
 export const RouterProducts = Router();
 
-
+RouterProducts.route("/checkout").get(async(req, res)=>{
+  res.render("page/checkout");
+})
 
 
 RouterProducts.route("/product/:slug").get(async (req, res) => {
