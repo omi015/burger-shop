@@ -4,46 +4,39 @@
         <div class="contentCheckOut ">
             <div class="checkOutWrapper container mx-auto">
                 <div class="containerForm">
-                    <form action="" class="flex flex-row  text-center gap-5" method="post">
+                    <form action="/thanks" class="flex flex-row  text-center gap-5" method="post">
                         <div class="flex flex-col gap-5 ">
-                        <h3 class="text-black text-4xl font-bold container">Checkout</h3>
-                        <input
-                type="text"
-                class="bg-[#F1F1F1] py-2 px-6 rounded-full"
-                placeholder="Usuario"
-                name="name"
-/>
-                        <input
-                type="text"
-                class="bg-[#F1F1F1] py-2 px-6 rounded-full"
-                placeholder="Contraseña"
-                name="password"
-/>
+                            <h3 class="text-black text-4xl font-bold container">Checkout</h3>
+                            <input type="hidden" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Usuario" value="{{product.id}}" name="ProductId"/>
+                            <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Address" name="address"/>
 
-                        <button
-                type="submit"
-                class="bg-[#E7B91B] rounded-full py-1 font-bold w-[100%]"
-              >
-                Inicio
-              </button>
+                            <button type="submit" class="bg-[#E7B91B] rounded-full py-1 font-bold w-[100%]">
+                                Inicio
+                            </button>
                         </div>
 
-              <div class="containerCheck flex flex-col place-content-between bg-[#F1F1F1] border-2 border-[#9F9F9F]  p-5 rounded-2xl w-[400px] text-start">
+                        <div class="containerCheck flex flex-col place-content-between bg-[#F1F1F1] border-2 border-[#9F9F9F]  p-5 rounded-2xl w-[400px] text-start">
 
-                    <div class="text-[#626262] flex flex-col">
-                    <h3><b>Resumen</b></h3>
-                    <span>Hamburguesa $ 35,000</span>
-                    <span>Envio  $ 5000</span>
-                    </div>
+                            <div class="text-[#626262] flex flex-col">
+                                <h3>
+                                    <b>Resumen</b>
+                                </h3>
+                                <span>{{product.name}}
+                                    ${{product.price}}
+                                </span>
+                                <span>Envios: $5000</span>
+                            </div>
 
-                    <div class="text-[#626262]">
-                    <h4><b>Total</b></h4>
-                    <span>$ 40000</span>
-                    </div>
-                </div>
+                            <div class="text-[#626262]">
+                                <h4>
+                                    <b>Total</b>
+                                </h4>
+                                <span>{{product.price + 5000}}$</span>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </section>

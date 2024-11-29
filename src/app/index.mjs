@@ -14,7 +14,7 @@ nunjucks.configure("src/template", {
 });
 app.set("view engine", "njk");
 
-//
+
 app.use("/static", express.static("src/assets"));
 
 const Store = SQLiteStore(session);
@@ -29,19 +29,13 @@ app.use(
   express.urlencoded()
 );
 
-app.use((req, res, next) => {
-    console.log(req.session);
-    const path = req.originalUrl.includes("/login");
-    if (req.session.user && !path) {
-      res.redirect("/login");
-    } else if(!req.session.user && path){
-        res.redirect("/");
-    }else{
-        next();
-    }
-  })
-app.use(RouterProducts);
-//
-app.use(RouterPage);
+
+app.use(RouterProducts, (req, res, next)=>{
+  if(req.session.user){
+    next();
+  }else{
+    res.redirect("/");
+  }
+}, RouterPage);
 
 
