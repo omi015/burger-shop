@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>oli</h1>
+{% extends "index.njk" %}
+{% block body %}
+    <section>
+        <form action="" class="flex flex-col w-[300px] text-center gap-5" method="post">
+            <h3 class="text-[#E7B91B] text-4xl font-bold">Login</h3>
+            <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Usuario" name="name"/>
+            <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Contraseña" name="password"/>
+            <button type="submit" class="bg-[#E7B91B] rounded-full py-1 font-bold">
+                Inicio
+            </button>
+        </form>
+    </section>
 
-
-    <a href="/logout"><button>Logout</button></a>
-</body>
-</html>
+{% endblock %}
