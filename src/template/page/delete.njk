@@ -1,0 +1,23 @@
+{% extends "index.njk" %}
+{% block body %}
+    <section>
+        <div class="py-10 px-5 flex flex-col gap-10 mx-autocontainer">
+            <h1 class="font-bold uppercase text-4xl text-center">{{name}}</h1>
+            <div class="w-full max-w-xl mx-auto">
+                <form action="/user/delete/{{id}}" method="post" class="flex flex-col gap-4 items-start">
+                    <div class=" text-center px-8 py-5 font-medium text-red-500 bg-red-200 border-b-4 border-current w-full">
+                        ¿Estás seguro de que deseas eliminar al usuario
+                        {{name}}?
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <a href="/login" class="inline-block bg-amber-500 text-white rounded-full py-1 font-bold px-6">Volver</a>
+                        <button type="submit" class="bg-red-500 text-white rounded-full py-1 font-bold px-6">
+                            Eliminar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

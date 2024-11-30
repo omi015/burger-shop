@@ -1,14 +1,41 @@
 {% extends "index.njk" %}
 {% block body %}
     <section>
-        <form action="" class="flex flex-col w-[300px] text-center gap-5" method="post">
-            <h3 class="text-[#E7B91B] text-4xl font-bold">Login</h3>
-            <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Usuario" name="name"/>
-            <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Contraseña" name="password"/>
-            <button type="submit" class="bg-[#E7B91B] rounded-full py-1 font-bold">
-                Inicio
-            </button>
-        </form>
+        <div class="py-10 px-5 flex flex-col gap-10 mx-autocontainer">
+            <h1 class="font-bold uppercase text-4xl text-center">Usuarios</h1>
+            <div class="w-full max-w-xl mx-auto">
+                {% if alert %}
+                    <div class="px-8 py-5 mb-10 font-medium text-green-500 bg-green-200 border-b-4 border-current">
+                        {{alert}}
+                    </div>
+                {% endif %}
+                <table class="w-full border-y border-stone-200">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-4 text-left">Nombre</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr class="odd:bg-stone-100">
+                                <td class="px-6 py-4 text-left">
+                                    {{user.name}}
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    <a class="text-blue-500" href="/user/{{user.id}}">
+                                        Actualizar
+                                    </a>
+                                    <a class="text-red-500 ml-5" href="/user/delete/{{user.id}}">
+                                        Eliminar
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
 
 {% endblock %}
