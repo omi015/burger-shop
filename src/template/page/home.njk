@@ -10,9 +10,11 @@
       </figure>
       <h2 class="font-bold w-[8em]">guesas</h2>
     </div>
-    <button class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full">
-      Comer ahora!
-    </button>
+    <a href="/product/llanera">
+      <button class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full">
+        Comer ahora!
+      </button>
+    </a>
   </section>
   <!-- cards -->
   <section id="menu">
@@ -25,7 +27,6 @@
             </figure>
             <h4>{{item.name}}</h4>
           </div>
-
         {% endfor %}
       </section>
 
@@ -45,30 +46,26 @@
             </figure>
           </div>
           <div class="loginRight w-[40%] flex items-center justify-center">
-
             {% if login %}
-            <div class="flex flex-col items-center gap-4">
-            <h3 class="text-black text-4xl font-bold"> Estas Logeado</h3>
-            <a href="/login">
-            <button type="submit" class="bg-[#E7B91B] rounded-full py-1 font-bold px-4">
-                Admin
-              </button> 
-            </a>
-            
-            </div>
+              <div class="flex flex-col items-center gap-4">
+                <h3 class="text-black text-4xl font-bold">
+                  Estas Logeado</h3>
+                <a href="/login">
+                  <button type="submit" class="bg-[#E7B91B] rounded-full py-1 font-bold px-4">
+                    Click para acceder Al admin
+                  </button>
+                </a>
+              </div>
             {% else  %}
-
-            <form action="/" class="flex flex-col w-[300px] text-center gap-5" method="post">
-              <h3 class="text-[#E7B91B] text-4xl font-bold">Login</h3>
-              <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Usuario" name="name"/>
-              <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Contraseña" name="password"/>
-
-              <button type="submit" class="bg-[#E7B91B] rounded-full py-1 font-bold">
-                Inicio
-              </button>
-            </form>
+              <form action="/" id="login" class="flex flex-col w-[300px] text-center gap-5" method="post">
+                <h3 class="text-[#E7B91B] text-4xl font-bold">Login</h3>
+                <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Usuario" name="name"/>
+                <input type="text" class="bg-[#F1F1F1] py-2 px-6 rounded-full" placeholder="Contraseña" name="password"/>
+                <button type="submit" class="bg-[#E7B91B] rounded-full py-1 font-bold">
+                  Inicio
+                </button>
+              </form>
             {% endif %}
-
           </div>
         </div>
       </section>

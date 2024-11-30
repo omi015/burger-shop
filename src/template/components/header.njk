@@ -1,23 +1,32 @@
 <header>
-  <div
-    class="navBarTop grid grid-cols-3 py-2 items-center px-5 bg-black text-white"
-  >
+  <div class="navBarTop grid grid-cols-3 py-2 items-center px-5 bg-black text-white">
     <figure>
-      <a href="/"><img src="/static/img/logo-hamburguesas2.svg" alt="" /></a>
+      <a href="/"><img src="/static/img/logo-hamburguesas2.svg" alt=""/></a>
     </figure>
     <nav class="flex justify-center items-center py-4">
       <ul class="flex gap-10">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/#menu">Menu</a></li>
-        <li><a href="/#register">Register</a></li>
+        <li>
+          <a href="/">Inicio</a>
+        </li>
+        <li>
+          <a href="/#menu">Menu</a>
+        </li>
+        <li>
+          <a href="/#register">Register</a>
+        </li>
       </ul>
     </nav>
-    <div class="text-right">
-      <a
-        href="#"
-        class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full inline-block"
-        >Login</a
-      >
-    </div>
+
+    {% if login %}
+      <div class="text-right">
+        <a href="/logout" class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full inline-block">logout</a >
+      </div>
+
+    {% else  %}
+      <div class="text-right">
+        <a href="/#login" class="bg-[#E7B91B] font-bold text-black px-9 py-0.5 rounded-full inline-block">Login</a >
+      </div>
+
+    {% endif %}
   </div>
 </header>

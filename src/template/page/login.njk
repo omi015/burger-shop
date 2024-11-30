@@ -1,14 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>oli</h1>
+{% extends "index.njk" %}
+{% block body %}
+    <section>
+        <div class="py-10 px-5 flex flex-col gap-10 mx-autocontainer">
+            <h1 class="font-bold uppercase text-4xl text-center">Usuarios</h1>
+            <div class="w-full max-w-xl mx-auto">
+                {% if alert %}
+                    <div class="px-8 py-5 mb-10 font-medium text-green-500 bg-green-200 border-b-4 border-current">
+                        {{alert}}
+                    </div>
+                {% endif %}
+                <table class="w-full border-y border-stone-200">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-4 text-left">Nombre</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr class="odd:bg-stone-100">
+                                <td class="px-6 py-4 text-left">
+                                    {{user.name}}
+                                </td>
+                                <td class="px-6 py-4 text-sm text-right">
+                                    <a class="text-blue-500" href="/user/{{user.id}}">
+                                        Actualizar
+                                    </a>
+                                    <a class="text-red-500 ml-5" href="/user/delete/{{user.id}}">
+                                        Eliminar
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-
-    <a href="/logout"><button>Logout</button></a>
-</body>
-</html>
+{% endblock %}
